@@ -43,6 +43,9 @@
       <div class="well well-sm ellipsis">
         <strong translate>Transaction</strong> 
         <span class="txid text-muted">{{tx.txid}}</span>
+              <a href="api/detailedtx/{{tx.txid}}" target="_blank" style="margin-left: 5px; text-decoration: none;">
+        <span style="display: inline-block; width: 16px; height: 16px; background-color: #000; border-radius: 50%; text-align: center; line-height: 16px; font-size: 11px; font-weight: bold; color: #fff; cursor: pointer; vertical-align: middle;" title="View API JSON">i</span>
+      </a>
         <span class="btn-copy" clip-copy="tx.txid"></span>
       </div>
       <h2 translate>Summary</h2>
