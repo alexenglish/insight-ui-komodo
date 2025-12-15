@@ -24,7 +24,7 @@
                   <span class="glyphicon glyphicon-link" style="font-size: 10px;"></span>
                 </a>
                 <span data-ng-show="vin.notAddr" style="font-family: monospace; font-size: 11px;">{{vin.addr}}</span>
-                <a href="address/{{vin.addr}}" data-ng-show="!vin.notAddr" style="font-family: monospace; font-size: 11px;">{{vin.addr}}</a>
+                <a href="address/{{vin.addr}}" data-ng-show="!vin.notAddr" style="font-family: monospace; font-size: 11px;" data-ng-style="(vin.addr == address.addrStr || vin.addr == address.identityinfo.identity.identityaddress) && {'font-weight': 'bold', 'color': '#fff', 'background-color': '#3165D4', 'padding': '2px 6px', 'border-radius': '3px'} || {}">{{vin.addr}}</a>
                 <span class="btn-copy" clip-copy="vin.addr" style="margin-left: 6px;"></span>
               </div>
               <div data-ng-show="vin.dbError" style="color: #dc3545; font-size: 10px;">
@@ -71,7 +71,7 @@
               <div data-ng-if="vout.script_reserve_balance" style="display: flex; align-items: center;">
                 <span class="glyphicon glyphicon-transfer" style="margin-right: 6px; color: #17a2b8; font-size: 10px;"></span>
                 <span data-ng-show="vout.notAddr" style="font-family: monospace; font-size: 11px;">{{vout.scriptPubKey.addresses[0]}}</span>
-                <a href="address/{{vout.scriptPubKey.addresses[0]}}" data-ng-show="!vout.notAddr" style="font-family: monospace; font-size: 11px;">{{vout.scriptPubKey.addresses[0]}}</a>
+                <a href="address/{{vout.scriptPubKey.addresses[0]}}" data-ng-show="!vout.notAddr" style="font-family: monospace; font-size: 11px;" data-ng-style="(vout.scriptPubKey.addresses[0] == address.addrStr || vout.scriptPubKey.addresses[0] == address.identityinfo.identity.identityaddress) && {'font-weight': 'bold', 'color': '#fff', 'background-color': '#3165D4', 'padding': '2px 6px', 'border-radius': '3px'} || {}">{{vout.scriptPubKey.addresses[0]}}</a>
                 <span class="btn-copy" clip-copy="vout.scriptPubKey.addresses[0]" style="margin-left: 6px;"></span>
               </div>
               <!-- Cross-chain Reserve Transfer to Ethereum -->
@@ -123,7 +123,7 @@
                   </div>
                   <div data-ng-if="vout.acceptednotarization.proposer && vout.acceptednotarization.proposer.address" style="padding: 2px 0; font-size: 11px;">
                     <span style="font-weight: 500; color: #28a745;">Proposer:</span>
-                    <a href="address/{{vout.acceptednotarization.proposer.address}}" style="font-family: monospace; margin-left: 6px; font-size: 11px;">{{vout.acceptednotarization.proposer.address}}</a>
+                    <a href="address/{{vout.acceptednotarization.proposer.address}}" style="font-family: monospace; margin-left: 6px; font-size: 11px;" data-ng-style="(vout.acceptednotarization.proposer.address == address.addrStr || vout.acceptednotarization.proposer.address == address.identityinfo.identity.identityaddress) && {'font-weight': 'bold', 'color': '#fff', 'background-color': '#3165D4', 'padding': '2px 6px', 'border-radius': '3px'} || {}">{{vout.acceptednotarization.proposer.address}}</a>
                     <span class="btn-copy" clip-copy="vout.acceptednotarization.proposer.address" style="margin-left: 6px;"></span>
                   </div>
                   <div data-ng-if="vout.acceptednotarization.notarizationheight" style="padding: 2px 0; font-size: 11px;">
@@ -160,8 +160,8 @@
               <!-- Standard output -->
               <div data-ng-if="!vout.script_reserve_balance && !vout.identityprimary && !vout.currencydefinition && !vout.othercommitment && !vout.isProtocolAddress && !vout.isP2SH" style="display: flex; align-items: center; flex-wrap: wrap;">
                 <span data-ng-show="vout.notAddr" style="font-family: monospace; font-size: 11px;">{{vout.scriptPubKey.addresses[0]}}</span>
-                <span data-ng-show="!vout.notAddr" data-ng-repeat="address in vout.scriptPubKey.addresses" style="margin-right: 4px;">
-                  <a href="address/{{address}}" style="font-family: monospace; font-size: 11px;">{{address}}</a>
+                <span data-ng-show="!vout.notAddr" data-ng-repeat="addr in vout.scriptPubKey.addresses" style="margin-right: 4px;">
+                  <a href="address/{{addr}}" style="font-family: monospace; font-size: 11px;" data-ng-style="(addr == address.addrStr || addr == address.identityinfo.identity.identityaddress) && {'font-weight': 'bold', 'color': '#fff', 'background-color': '#3165D4', 'padding': '2px 6px', 'border-radius': '3px'} || {}">{{addr}}</a>
                 </span>
                 <span class="btn-copy" clip-copy="vout.scriptPubKey.addresses[0]" style="margin-left: 6px;"></span>
            
